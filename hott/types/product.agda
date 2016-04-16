@@ -1,11 +1,11 @@
 module hott.types.product where
 
 open import hott.core.universe
+open import hott.types.sigma public
 
-record _×_ {a b} (A : Set a) (B : Set b) : Set (a ⊔ b) where
-  constructor _,_
-  field
-    pr₁ : A
-    pr₂ : B
+module _ {a b} where
 
-open _×_ public
+  infixr 2 _×_
+
+  _×_ : (A : Set a) (B : Set b) → Set (a ⊔ b)
+  A × B = Σ A (λ _ → B)

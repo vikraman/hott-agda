@@ -18,12 +18,12 @@ module _ {a p} {A : Set a}
          (P : Set p) (𝑛 𝑠 : P)
          (𝑚 : A → 𝑛 ≡ 𝑠) where
   postulate
-    rec∑ : ∑ A → P
-    βrec∑-𝑁 : rec∑ 𝑁 ≡ 𝑛
-    βrec∑-𝑆 : rec∑ 𝑆 ≡ 𝑠
-    {-# REWRITE βrec∑-𝑁 #-}
-    {-# REWRITE βrec∑-𝑆 #-}
-    βrec∑-merid : (a : A) → ap rec∑ (merid a) ≡ 𝑚 a
+    rec-∑ : ∑ A → P
+    βrec-∑-𝑁 : rec-∑ 𝑁 ≡ 𝑛
+    βrec-∑-𝑆 : rec-∑ 𝑆 ≡ 𝑠
+    {-# REWRITE βrec-∑-𝑁 #-}
+    {-# REWRITE βrec-∑-𝑆 #-}
+    βrec-∑-merid : (a : A) → ap rec-∑ (merid a) ≡ 𝑚 a
 
 module _ {a p} {A : Set a}
          (P : ∑ A → Set p) (𝑛 : P 𝑁) (𝑠 : P 𝑆)

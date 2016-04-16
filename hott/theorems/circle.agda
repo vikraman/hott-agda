@@ -7,11 +7,11 @@ open import hott.types
 
 {-# REWRITE βrec-S¹-loop #-}
 {-# REWRITE βind-S¹-loop #-}
-{-# REWRITE βrec∑-merid #-}
+{-# REWRITE βrec-∑-merid #-}
 {-# REWRITE βind-∑-merid #-}
 
 f : ∑ bool → S¹
-f = rec∑ S¹ base base λ { true → loop ; false → refl }
+f = rec-∑ S¹ base base λ { true → loop ; false → refl }
 
 g : S¹ → ∑ bool
 g = rec-S¹ (∑ bool) 𝑁 (merid true ∙ (merid false ⁻¹))

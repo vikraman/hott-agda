@@ -12,7 +12,7 @@ module _ {ℓ} {A B : Set ℓ} where
 module _ {a b} {A : Set a} {B : Set b} where
 
   happly : {f g : A → B} → f ≡ g → (x : A) → f x ≡ g x
-  happly refl x = refl
+  happly (refl h) x = refl (h x)
 
   postulate
     funext : {f g : A → B} → ((x : A) → f x ≡ g x) → f ≡ g

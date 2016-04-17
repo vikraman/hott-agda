@@ -7,7 +7,7 @@ open import hott.types.span
 
 module _ {a b c} where
   postulate
-    pushout : span {a} {b} {c} → Set (suc (a ⊔ b ⊔ c))
+    pushout : span {a} {b} {c} → Set (a ⊔ b ⊔ c)
 
   module _ {s : span {a} {b} {c}} where
     open span s

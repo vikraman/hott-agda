@@ -6,7 +6,7 @@ open import hott.core
 
 module _ {a} where
   postulate
-    ∑_ : (A : Set a) → Set (suc a)
+    ∑_ : (A : Set a) → Set a
 
   module _ {A : Set a} where
     postulate

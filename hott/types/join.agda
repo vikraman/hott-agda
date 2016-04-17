@@ -10,5 +10,5 @@ module _ {a b} where
   *-span : (A : Set a) (B : Set b) → span
   *-span A B = mkspan A B (A × B) pr₁ pr₂
 
-  _*_ : (A : Set a) (B : Set b) → Set (suc (a ⊔ b))
+  _*_ : (A : Set a) (B : Set b) → Set (a ⊔ b)
   A * B = pushout (*-span A B)

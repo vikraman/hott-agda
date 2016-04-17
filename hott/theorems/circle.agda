@@ -109,3 +109,6 @@ module ∑bool≃S¹ where
 ∑bool≡S¹ : ∑ bool ≡ S¹
 ∑bool≡S¹ with ua
 ... | _ , eq = is-equiv.g eq ∑bool≃S¹
+
+S¹≡∑bool : S¹ ≡ ∑ bool
+S¹≡∑bool = ∑bool≡S¹ ⁻¹

@@ -7,7 +7,7 @@ open import hott.core.identity
 
 module _ {ℓ} {A B : Set ℓ} where
   postulate
-    ua : (A ≃ B) ≃ (A ≡ B)
+    ua : (A ≡ B) ≃ (A ≃ B)
 
 module _ {a b} {A : Set a} {B : Set b} where
 

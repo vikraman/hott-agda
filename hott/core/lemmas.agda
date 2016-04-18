@@ -1,3 +1,5 @@
+{-# OPTIONS --without-K #-}
+
 module hott.core.lemmas where
 
 open import hott.core.universe
@@ -63,7 +65,14 @@ module _ {a b} {A : Set a} {B : Set b} {x : A} where
 
   ↓-id : {y : A} (p : x ≡ y) (q : x ≡ x)
        → q ≡ p ⁻¹ ∙ q ∙ p [ (λ x → x ≡ x) ↓ p ]
-  ↓-id (refl _) (refl _) = refl (refl x)
+  ↓-id (refl _) q =
+    begin
+      q
+    ≡⟨ p≡p∙refl q ⟩
+      q ∙ refl x
+    ≡⟨ ap (λ p → p ∙ refl x) (p≡refl∙p q) ⟩
+      refl _ ∙ q ∙ refl _
+    ∎
 
   ↓-ap : {y : A} (f g : A → B) (p : x ≡ y) (q : f x ≡ g x)
        → q ≡ ap f p ⁻¹ ∙ q ∙ ap g p [ (λ x → f x ≡ g x) ↓ p ]
